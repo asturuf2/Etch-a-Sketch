@@ -1,6 +1,8 @@
 const container = document.querySelector("#container")
 
-const grid = (number) => {
+let number = Number(prompt("Input a number"))
+
+const createGrid = (number) => {
     for (let i = 0; i < number; i++){
         const row = document.createElement('div')
         row.classList.add('row')
@@ -17,5 +19,13 @@ const grid = (number) => {
     }
 }
 
-grid(16)
+createGrid(number)
 
+const whichColumn = document.querySelectorAll(".column")
+
+for (let i = 0; i < whichColumn.length; i++){
+    whichColumn[i].addEventListener("mouseover", () => {
+        whichColumn[i].style.backgroundColor = "grey";
+        console.log(whichColumn[i]);
+    })
+}
